@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Triple Dice Roller</title>
+  <style>
+    :root{
+      --bg-1:#0f172a;/* slate-900 */
+      --bg-2:#1e293b;/* slate-800 */
+      --card:#0b1220aa;/* glass */
+      --accent:#22d3ee;/* cyan-400 */
+      --accent-2:#a78bfa;/* violet-400 */
+      --good:#22c55e;/* green-500 */
+      --bad:#ef4444;/* red-500 */
+      --text:#e5e7eb;/* slate-200 */
+      --muted:#94a3b8;/* slate-400 */
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 24px;
+    }
+
+    /* Background */
+    body{
+      margin:0; font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,"Helvetica Neue",Arial;
+      color:var(--text);
+      min-height:100dvh; display:grid; place-items:center;
+      background: radial-gradient(1200px 800px at 20% -10%, #0ea5e980, transparent 60%),
+                  radial-gradient(1000px 700px at 110% 20%, #8b5cf680, transparent 50%),
+                  linear-gradient(160deg, var(--bg-1), var(--bg-2));
+    }
+
+    .app{
+      width:min(100%, 1100px);
+      padding:clamp(16px, 3vw, 28px);
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: clip;
+    }
+
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:clamp(14px,2.2vw,22px) clamp(16px,2.5vw,26px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:clamp(34px,4vw,46px); aspect-ratio:1; border-radius:14px;
+      background: conic-gradient(from 160deg, var(--accent), var(--accent-2));
+      box-shadow: 0 6px 18px rgba(0,0,0,.3);
+    }
+    h1{margin:0; font-size:clamp(18px,3.2vw,28px); letter-spacing:.3px}
+    .sub{margin:2px 0 0; font-size:clamp(12px,1.8vw,14px); color:var(--muted)}
+
+    /* Prefer reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{animation: none !important; transition: none !important}
+    }
+
+    /* Layout */
+    .content{ display:grid; gap:clamp(16px,2.5vw,24px); padding:clamp(18px,3vw,28px); }
+    @media (min-width: 820px){
+      .content{ grid-template-columns: 1.2fr .8fr; align-items:stretch; }
+    }
+    /* Landscape small screens: keep single column for better readability */
+    @media (max-height: 500px) and (orientation: landscape){
+      .content{ grid-template-columns: 1fr; }
+      .controls button{ flex:1 1 220px }
+    }
+    }
+
+    /* Dice area */
+    .dice-wrap{ display:grid; gap:clamp(14px,2vw,18px); }
+    .dice-row{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:clamp(12px,2vw,16px);
+    }
+
+    .die{
+      position:relative; aspect-ratio:1; border-radius:22px;
+      background: radial-gradient(120% 120% at 30% 30%, rgba(255,255,255,.18), rgba(255,255,255,.05)),
+                  linear-gradient(145deg, #0b1220, #111827);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: inset 0 6px 16px rgba(255,255,255,.06), inset 0 -10px 20px rgba(0,0,0,.35), var(--shadow);
+      display:grid; place-items:center;
+      user-select:none; -webkit-user-select:none;
+      transform: translateZ(0);
+    }
+
+    .die .value{
+      font-weight:800; font-size:clamp(38px, 6.5vw, 62px);
+      line-height:1; letter-spacing:.5px;
+      text-shadow: 0 6px 20px rgba(0,0,0,.55);
+    }
+
+    /* Roll animation */
+    .shaking{ animation: wiggle .8s ease-in-out both; }
+    @keyframes wiggle{
+      0%{ transform: rotate(0) scale(1); }
+      20%{ transform: rotate(-10deg) scale(1.02) translateY(-2px); }
+      40%{ transform: rotate(8deg) scale(1.02); }
+      60%{ transform: rotate(-6deg) }
+      80%{ transform: rotate(4deg) }
+      100%{ transform: rotate(0) scale(1); }
+    }
+
+    /* Panel */
+    .panel{
+      display:grid; align-content:start; gap:clamp(14px,2.2vw,18px);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.1);
+      border-radius: 20px; padding:clamp(16px,2.6vw,22px);
+    }
+
+    .stats{ display:grid; grid-template-columns: repeat(3,1fr); gap:10px; text-align:center }
+    .stat{padding:12px; border:1px dashed rgba(255,255,255,.14); border-radius:14px}
+    .stat .k{font-size:12px; color:var(--muted)}
+    .stat .v{font-weight:700; font-size:clamp(16px,2.6vw,22px)}
+
+    .result{ font-size:clamp(16px,2.6vw,22px); line-height:1.3; }
+    .result.win{ color: var(--good); }
+    .result.lose{ color: var(--bad); }
+    .result small{ display:block; color:var(--muted); margin-top:6px }
+
+    .controls{ display:flex; gap:10px; flex-wrap:wrap }
+    button{
+      position:relative; border:0; cursor:pointer; font-weight:700; letter-spacing:.3px;
+      padding:14px 18px; border-radius:16px; background:linear-gradient(90deg, var(--accent), var(--accent-2));
+      color:#0b1220; box-shadow: 0 10px 20px rgba(0,0,0,.35), inset 0 -6px 12px rgba(0,0,0,.15);
+      transition: transform .12s ease, filter .2s ease; flex:1 1 180px;
+    }
+    button:hover{ transform: translateY(-1px) }
+    button:active{ transform: translateY(0) scale(.99) }
+    button[disabled]{ filter: saturate(.2) contrast(.8); cursor:not-allowed }
+    @media (max-width: 360px){
+      button{ padding:12px 14px; border-radius:14px }
+      .dice-row{ gap:10px }
+    }
+
+    .ghost{ background: transparent; color: var(--text); border:1px solid rgba(255,255,255,.18) }
+
+    footer{ padding:14px 20px; text-align:center; color:var(--muted); font-size:12px }
+
+    /* Confetti */
+    .confetti{ position:fixed; inset:0; pointer-events:none; overflow:hidden }
+    .confetti i{ position:absolute; width:10px; height:14px; background: white; opacity:.9; animation: fall 1200ms linear forwards }
+    @keyframes fall{
+      to{ transform: translateY(100vh) rotate(540deg); opacity: .4 }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="card" role="application" aria-label="Triple Dice Roller">
+      <header>
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>Triple Dice Roller</h1>
+            <div class="sub">Tap the button to roll three dice. Beat 12 to win!</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- Dice Grid -->
+        <section class="dice-wrap" aria-live="polite">
+          <div class="dice-row">
+            <div class="die" id="die1" aria-label="Die 1 shows 1"><span class="value">1</span></div>
+            <div class="die" id="die2" aria-label="Die 2 shows 1"><span class="value">1</span></div>
+            <div class="die" id="die3" aria-label="Die 3 shows 1"><span class="value">1</span></div>
+          </div>
+        </section>
+
+        <!-- Side Panel -->
+        <aside class="panel">
+          <div class="stats">
+            <div class="stat"><div class="k">Die 1</div><div id="s1" class="v">1</div></div>
+            <div class="stat"><div class="k">Die 2</div><div id="s2" class="v">1</div></div>
+            <div class="stat"><div class="k">Die 3</div><div id="s3" class="v">1</div></div>
+          </div>
+
+          <div id="result" class="result">Press “Roll Dice” to start
+            <small>Rule: If total &gt; 12 → <strong>Congrats! Your money doubled.</strong> Otherwise → <em>This time you lost.</em></small>
+          </div>
+
+          <div class="controls">
+            <button id="rollBtn" aria-label="Roll three dice">🎲 Roll Dice</button>
+            <button class="ghost" id="resetBtn" aria-label="Reset the game">Reset</button>
+          </div>
+        </aside>
+      </div>
+
+      <footer>All Design are in RASANDESIGN (RSD COIN). Fully responsive & mobile-friendly.</footer>
+    </div>
+  </div>
+
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+
+  <script>
+    const diceEls = [document.getElementById('die1'), document.getElementById('die2'), document.getElementById('die3')];
+    const statEls = [document.getElementById('s1'), document.getElementById('s2'), document.getElementById('s3')];
+    const resultEl = document.getElementById('result');
+    const rollBtn = document.getElementById('rollBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const confetti = document.getElementById('confetti');
+
+    function rand(){ return Math.floor(Math.random()*6)+1 }
+
+    function animateDice(){
+      diceEls.forEach(d=>{ d.classList.remove('shaking'); void d.offsetWidth; d.classList.add('shaking'); });
+    }
+
+    function makeConfetti(){
+      // spawn ~60 pieces with random x and hue
+      for(let i=0;i<60;i++){
+        const piece = document.createElement('i');
+        const x = Math.random()*100; // vw
+        const delay = Math.random()*200; // ms
+        const scale = .8 + Math.random()*1.2;
+        piece.style.left = x + 'vw';
+        piece.style.top = '-20px';
+        piece.style.transform = `scale(${scale})`;
+        piece.style.background = `hsl(${Math.floor(Math.random()*360)}, 90%, 60%)`;
+        piece.style.animationDelay = delay+'ms';
+        confetti.appendChild(piece);
+        setTimeout(()=> piece.remove(), 1400+delay);
+      }
+    }
+
+    function roll(){
+      rollBtn.disabled = true;
+      animateDice();
+      setTimeout(()=>{
+        const values = [rand(), rand(), rand()];
+        values.forEach((v,i)=>{
+          diceEls[i].querySelector('.value').textContent = v;
+          diceEls[i].setAttribute('aria-label', `Die ${i+1} shows ${v}`);
+          statEls[i].textContent = v;
+        });
+        const total = values.reduce((a,b)=>a+b,0);
+        const win = total > 12;
+        resultEl.classList.remove('win','lose');
+        resultEl.classList.add(win ? 'win' : 'lose');
+        resultEl.innerHTML = `${win ? '🎉 Congrats! Your money doubled.' : '😔 This time you lost.'}<small>Dice: ${values.join(' • ')} (Total: <strong>${total}</strong>)</small>`;
+        if(win) makeConfetti();
+        rollBtn.disabled = false;
+      }, 820);
+    }
+
+    function reset(){
+      [1,1,1].forEach((v,i)=>{
+        diceEls[i].querySelector('.value').textContent = v;
+        statEls[i].textContent = v;
+        diceEls[i].setAttribute('aria-label', `Die ${i+1} shows ${v}`);
+      });
+      resultEl.classList.remove('win','lose');
+      resultEl.innerHTML = `Press “Roll Dice” to start <small>Rule: If total &gt; 12 → <strong>Congrats! Your money doubled.</strong> Otherwise → <em>This time you lost.</em></small>`;
+      confetti.innerHTML = '';
+    }
+
+    rollBtn.addEventListener('click', roll);
+    resetBtn.addEventListener('click', reset);
+  </script>
+</body>
+</html>
