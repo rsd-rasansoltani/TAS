@@ -1,19 +1,214 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome</title>
-<style>
-body { background-color: #121212; color: #00ffcc; font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin:0;}
-h1 { font-size: 2.5em; margin-bottom: 50px; text-align:center;}
-button { padding: 15px 30px; margin: 10px; font-size: 18px; border: none; border-radius: 10px; background-color: #00ffcc; color: #121212; cursor: pointer; transition: 0.2s; }
-button:hover { background-color: #00ddb0; }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>فهرست لینک‌های .onion</title>
+  <style>
+body {
+background-color: #fdf6e3; /* تم کرمی */
+color: #2b2b2b;
+font-family: Tahoma, sans-serif;
+direction: rtl;
+text-align: right;
+margin: 20px;
+}
+h2 {
+color: #6b4226;
+border-bottom: 2px solid #6b4226;
+padding-bottom: 5px;
+}
+ul {
+list-style-type: none;
+padding: 0;
+}
+li {
+background: #fff7e1;
+margin: 8px 0;
+padding: 10px;
+border: 1px solid #d6c4a2;
+border-radius: 8px;
+box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+a {
+text-decoration: none;
+color: #5e321f;
+font-weight: bold;
+word-break: break-all;
+}
+a:hover {
+color: #8b0000;
+}
+button {
+background: #6b4226;
+color: #fff;
+border: none;
+padding: 6px 12px;
+margin-top: 5px;
+border-radius: 6px;
+cursor: pointer;
+}
+button:hover {
+background: #8b0000;
+}
 </style>
 </head>
 <body>
-<h1>Welcome to Wallet System</h1>
-<button onclick="location.href='index2.html'">Create Wallet</button>
-<button onclick="location.href='index3.html'">Login</button>
+  <h1>فهرست لینک‌های .onion</h1>
+  <p>برای کپی هر لینک دکمهٔ «کپی» را بزنید. برای کپی همهٔ لینک‌ها از دکمهٔ «کپی همه» استفاده کنید.</p>
+  <p><button id="copyAllBtn" onclick="copyAll()">کپی همه</button></p>
+  <hr>
+
+  <div id="links">
+
+    <h2>The Hidden Wiki</h2>
+    <p>
+      <a href="http://6nhmgdpnyoljh5uzr5kwlatx2u3diou4ldeommfxjz3wkhalzgjqxzqd.onion/" target="_blank" rel="noopener noreferrer">http://6nhmgdpnyoljh5uzr5kwlatx2u3diou4ldeommfxjz3wkhalzgjqxzqd.onion/</a>
+      <button onclick="copyToClipboard('http://6nhmgdpnyoljh5uzr5kwlatx2u3diou4ldeommfxjz3wkhalzgjqxzqd.onion/')">کپی</button>
+      <br>– The Hidden Wiki
+    </p>
+
+    <h2>Another Hidden Wiki</h2>
+    <p>
+      <a href="http://2jwcnprqbugvyi6ok2h2h7u26qc6j5wxm7feh3znlh2qu3h6hjld4kyd.onion/" target="_blank" rel="noopener noreferrer">http://2jwcnprqbugvyi6ok2h2h7u26qc6j5wxm7feh3znlh2qu3h6hjld4kyd.onion/</a>
+      <button onclick="copyToClipboard('http://2jwcnprqbugvyi6ok2h2h7u26qc6j5wxm7feh3znlh2qu3h6hjld4kyd.onion/')">کپی</button>
+      <br>– Another Hidden Wiki
+    </p>
+
+    <h2>Pug’s Ultimate Dark Web Guide</h2>
+    <p>
+      <a href="http://jgwe5cjqdbyvudjqskaajbfibfewew4pndx52dye7ug3mt3jimmktkid.onion/" target="_blank" rel="noopener noreferrer">http://jgwe5cjqdbyvudjqskaajbfibfewew4pndx52dye7ug3mt3jimmktkid.onion/</a>
+      <button onclick="copyToClipboard('http://jgwe5cjqdbyvudjqskaajbfibfewew4pndx52dye7ug3mt3jimmktkid.onion/')">کپی</button>
+      <br>– Pug’s Ultimate Dark Web Guide
+    </p>
+
+    <h2>The original hidden wiki</h2>
+    <p>
+      <a href="http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki/index.php/Main_Page" target="_blank" rel="noopener noreferrer">http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki/index.php/Main_Page</a>
+      <button onclick="copyToClipboard('http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki/index.php/Main_Page')">کپی</button>
+      <br>– The original hidden wiki
+    </p>
+
+    <h2>Bitcoin anonymity / Mixers & Wallets</h2>
+    <ul>
+      <li>
+        <a href="http://y22arit74fqnnc2pbieq3wqqvkfub6gnlegx3cl6thclos4f7ya7rvad.onion/" target="_blank" rel="noopener noreferrer">Dark Mixer</a>
+        <button onclick="copyToClipboard('http://y22arit74fqnnc2pbieq3wqqvkfub6gnlegx3cl6thclos4f7ya7rvad.onion/')">کپی</button>
+        – Dark Mixer – Anonymous bitcoin mixer
+      </li>
+      <li>
+        <a href="http://hqfld5smkr4b4xrjcco7zotvoqhuuoehjdvoin755iytmpk4sm7cbwad.onion/" target="_blank" rel="noopener noreferrer">Mixabit</a>
+        <button onclick="copyToClipboard('http://hqfld5smkr4b4xrjcco7zotvoqhuuoehjdvoin755iytmpk4sm7cbwad.onion/')">کپی</button>
+        – Mixabit – Bitcoin mixer
+      </li>
+      <li>
+        <a href="http://mp3fpv6xbrwka4skqliiifoizghfbjy5uyu77wwnfruwub5s4hly2oid.onion/" target="_blank" rel="noopener noreferrer">EasyCoin</a>
+        <button onclick="copyToClipboard('http://mp3fpv6xbrwka4skqliiifoizghfbjy5uyu77wwnfruwub5s4hly2oid.onion/')">کپی</button>
+        – EasyCoin – Bitcoin Wallet and Mixer
+      </li>
+      <li>
+        <a href="http://p2qzxkca42e3wccvqgby7jrcbzlf6g7pnkvybnau4szl5ykdydzmvbid.onion/" target="_blank" rel="noopener noreferrer">Onionwallet</a>
+        <button onclick="copyToClipboard('http://p2qzxkca42e3wccvqgby7jrcbzlf6g7pnkvybnau4szl5ykdydzmvbid.onion/')">کپی</button>
+        – Onionwallet – Anonymous and secure bitcoin wallet and mixer
+      </li>
+      <li>
+        <a href="http://ovai7wvp4yj6jl3wbzihypbq657vpape7lggrlah4pl34utwjrpetwid.onion/" target="_blank" rel="noopener noreferrer">VirginBitcoins</a>
+        <button onclick="copyToClipboard('http://ovai7wvp4yj6jl3wbzihypbq657vpape7lggrlah4pl34utwjrpetwid.onion/')">کپی</button>
+        – VirginBitcoins – Buy freshly mined clean bitcoins
+      </li>
+    </ul>
+
+    <h2>Drug stores (فروشندگان مواد)</h2>
+    <ul>
+      <li><a href="http://wbz2lrxhw4dd7h5t2wnoczmcz5snjpym4pr7dzjmah4vi6yywn37bdyd.onion/" target="_blank" rel="noopener noreferrer">DCdutchconnectionUK</a> <button onclick="copyToClipboard('http://wbz2lrxhw4dd7h5t2wnoczmcz5snjpym4pr7dzjmah4vi6yywn37bdyd.onion/')">کپی</button> – The dutch connection for the UK</li>
+      <li><a href="http://iwggpyxn6qv3b2twpwtyhi2sfvgnby2albbcotcysd5f7obrlwbdbkyd.onion/" target="_blank" rel="noopener noreferrer">DrChronic</a> <button onclick="copyToClipboard('http://iwggpyxn6qv3b2twpwtyhi2sfvgnby2albbcotcysd5f7obrlwbdbkyd.onion/')">کپی</button> – Weed straight from the source</li>
+      <li><a href="http://rfyb5tlhiqtiavwhikdlvb3fumxgqwtg2naanxtiqibidqlox5vispqd.onion/" target="_blank" rel="noopener noreferrer">TomAndJerry</a> <button onclick="copyToClipboard('http://rfyb5tlhiqtiavwhikdlvb3fumxgqwtg2naanxtiqibidqlox5vispqd.onion/')">کپی</button> – Cocaine, Heroin, MDMA and LSD from NL</li>
+      <li><a href="http://ajlu6mrc7lwulwakojrgvvtarotvkvxqosb4psxljgobjhureve4kdqd.onion/" target="_blank" rel="noopener noreferrer">420prime</a> <button onclick="copyToClipboard('http://ajlu6mrc7lwulwakojrgvvtarotvkvxqosb4psxljgobjhureve4kdqd.onion/')">کپی</button> – Cannabis in dispensary quality from the UK</li>
+      <li><a href="http://guzjgkpodzshso2nohspxijzk5jgoaxzqioa7vzy6qdmwpz3hq4mwfid.onion/" target="_blank" rel="noopener noreferrer">Bitpharma</a> <button onclick="copyToClipboard('http://guzjgkpodzshso2nohspxijzk5jgoaxzqioa7vzy6qdmwpz3hq4mwfid.onion/')">کپی</button> – Biggest european .onion drug store</li>
+      <li><a href="http://n6qisfgjauj365pxccpr5vizmtb5iavqaug7m7e4ewkxuygk5iim6yyd.onion/" target="_blank" rel="noopener noreferrer">EuCanna</a> <button onclick="copyToClipboard('http://n6qisfgjauj365pxccpr5vizmtb5iavqaug7m7e4ewkxuygk5iim6yyd.onion/')">کپی</button> – First Class Cannabis</li>
+      <li><a href="http://kl4gp72mdxp3uelicjjslqnpomqfr5cbdd3wzo5klo3rjlqjtzhaymqd.onion/" target="_blank" rel="noopener noreferrer">Smokeables</a> <button onclick="copyToClipboard('http://kl4gp72mdxp3uelicjjslqnpomqfr5cbdd3wzo5klo3rjlqjtzhaymqd.onion/')">کپی</button> – Finest organic cannabis from the USA</li>
+      <li><a href="http://7mejofwihleuugda5kfnr7tupvfbaqntjqnfxc4hwmozlcmj2cey3hqd.onion/" target="_blank" rel="noopener noreferrer">CannabisUK</a> <button onclick="copyToClipboard('http://7mejofwihleuugda5kfnr7tupvfbaqntjqnfxc4hwmozlcmj2cey3hqd.onion/')">کپی</button> – UK wholesale cannabis supplier</li>
+      <li><a href="http://2ln3x7ru6psileh7il7jot2ufhol4o7nd54z663xonnnmmku4dgkx3ad.onion/" target="_blank" rel="noopener noreferrer">Brainmagic</a> <button onclick="copyToClipboard('http://2ln3x7ru6psileh7il7jot2ufhol4o7nd54z663xonnnmmku4dgkx3ad.onion/')">کپی</button> – Best Darkweb psychedelics</li>
+      <li><a href="http://usmost4cbpesx552s2s4ti3c4nk2xgiu763vhcs3b4uc4ppp3zwnscyd.onion/" target="_blank" rel="noopener noreferrer">NLGrowers</a> <button onclick="copyToClipboard('http://usmost4cbpesx552s2s4ti3c4nk2xgiu763vhcs3b4uc4ppp3zwnscyd.onion/')">کپی</button> – Coffee Shop grade Cannabis from the Netherlands</li>
+      <li><a href="http://xf2gry25d3tyxkiu2xlvczd3q7jl6yyhtpodevjugnxia2u665asozad.onion/" target="_blank" rel="noopener noreferrer">Peoples Drug Store</a> <button onclick="copyToClipboard('http://xf2gry25d3tyxkiu2xlvczd3q7jl6yyhtpodevjugnxia2u665asozad.onion/')">کپی</button> – The Darkwebs best Drug supplier!</li>
+      <li><a href="http://sga5n7zx6qjty7uwvkxpwstyoh73shst6mx3okouv53uks7ks47msayd.onion/" target="_blank" rel="noopener noreferrer">DeDope</a> <button onclick="copyToClipboard('http://sga5n7zx6qjty7uwvkxpwstyoh73shst6mx3okouv53uks7ks47msayd.onion/')">کپی</button> – German Weed Store</li>
+    </ul>
+
+    <h2>More commercial links</h2>
+    <ul>
+      <li><a href="http://prjd5pmbug2cnfs67s3y65ods27vamswdaw2lnwf45ys3pjl55h2gwqd.onion/" target="_blank" rel="noopener noreferrer">Dark Web Hackers for hire</a> <button onclick="copyToClipboard('http://prjd5pmbug2cnfs67s3y65ods27vamswdaw2lnwf45ys3pjl55h2gwqd.onion/')">کپی</button></li>
+      <li><a href="http://55niksbd22qqaedkw36qw4cpofmbxdtbwonxam7ov2ga62zqbhgty3yd.onion/" target="_blank" rel="noopener noreferrer">AccMarket</a> <button onclick="copyToClipboard('http://55niksbd22qqaedkw36qw4cpofmbxdtbwonxam7ov2ga62zqbhgty3yd.onion/')">کپی</button> – Premium Paypal, Ebay and bank accounts</li>
+      <li><a href="http://s57divisqlcjtsyutxjz2ww77vlbwpxgodtijcsrgsuts4js5hnxkhqd.onion/" target="_blank" rel="noopener noreferrer">Cardshop</a> <button onclick="copyToClipboard('http://s57divisqlcjtsyutxjz2ww77vlbwpxgodtijcsrgsuts4js5hnxkhqd.onion/')">کپی</button> – USA CVV KNOWN BALANCE & Worldwide CC & CVV</li>
+      <li><a href="http://jbtb75gqlr57qurikzy2bxxjftzkmanynesmoxbzzcp7qf5t46u7ekqd.onion/" target="_blank" rel="noopener noreferrer">Darkmining</a> <button onclick="copyToClipboard('http://jbtb75gqlr57qurikzy2bxxjftzkmanynesmoxbzzcp7qf5t46u7ekqd.onion/')">کپی</button> – Bitcoin mining with stolen electricity</li>
+      <li><a href="http://jhi4v5rjly75ggha26cu2eeyfhwvgbde4w6d75vepwxt2zht5sqfhuqd.onion/" target="_blank" rel="noopener noreferrer">Bitcoin Investment Trust</a> <button onclick="copyToClipboard('http://jhi4v5rjly75ggha26cu2eeyfhwvgbde4w6d75vepwxt2zht5sqfhuqd.onion/')">کپی</button> – earn 5-9% per week!</li>
+      <li><a href="http://rxmyl3izgquew65nicavsk6loyyblztng6puq42firpvbe32sefvnbad.onion/" target="_blank" rel="noopener noreferrer">Mobile Store</a> <button onclick="copyToClipboard('http://rxmyl3izgquew65nicavsk6loyyblztng6puq42firpvbe32sefvnbad.onion/')">کپی</button> – Best unlocked cell phones vendor</li>
+      <li><a href="http://vhlehwexxmbnvecbmsk4ormttdvhlhbnyabai4cithvizzaduf3gmayd.onion/" target="_blank" rel="noopener noreferrer">Kamagra 4 Bitcoin</a> <button onclick="copyToClipboard('http://vhlehwexxmbnvecbmsk4ormttdvhlhbnyabai4cithvizzaduf3gmayd.onion/')">کپی</button> – Like Viagra but cheaper</li>
+      <li><a href="http://ymvhtqya23wqpez63gyc3ke4svju3mqsby2awnhd3bk2e65izt7baqad.onion/" target="_blank" rel="noopener noreferrer">OnionIdentityServices</a> <button onclick="copyToClipboard('http://ymvhtqya23wqpez63gyc3ke4svju3mqsby2awnhd3bk2e65izt7baqad.onion/')">کپی</button> – Fake passports and ID cards for bitcoin</li>
+      <li><a href="http://k6m3fagp4w4wspmdt23fldnwrmknse74gmxosswvaxf3ciasficpenad.onion/" target="_blank" rel="noopener noreferrer">Uk Guns and Ammo Store</a> <button onclick="copyToClipboard('http://k6m3fagp4w4wspmdt23fldnwrmknse74gmxosswvaxf3ciasficpenad.onion/')">کپی</button></li>
+      <li><a href="http://lqcjo7esbfog5t4r4gyy7jurpzf6cavpfmc4vkal4k2g4ie66ao5mryd.onion/" target="_blank" rel="noopener noreferrer">USfakeIDs</a> <button onclick="copyToClipboard('http://lqcjo7esbfog5t4r4gyy7jurpzf6cavpfmc4vkal4k2g4ie66ao5mryd.onion/')">کپی</button> – US fake ID store</li>
+      <li><a href="http://qazkxav4zzmt5xwfw6my362jdwhzrcafz7qpd5kugfgx7z7il5lyb6ad.onion/" target="_blank" rel="noopener noreferrer">Counterfeit USD</a> <button onclick="copyToClipboard('http://qazkxav4zzmt5xwfw6my362jdwhzrcafz7qpd5kugfgx7z7il5lyb6ad.onion/')">کپی</button> – High Quality USD counterfeits</li>
+      <li><a href="http://gd5x24pjoan2pddc2fs6jlmnqbawq562d2qyk6ym4peu5ihzy6gd4jad.onion/" target="_blank" rel="noopener noreferrer">USAcitizenship</a> <button onclick="copyToClipboard('http://gd5x24pjoan2pddc2fs6jlmnqbawq562d2qyk6ym4peu5ihzy6gd4jad.onion/')">کپی</button> – become a citizen of the USA</li>
+    </ul>
+
+    <h2>Everything else / Misc</h2>
+    <ul>
+      <li><a href="http://danielas3rtn54uwmofdo3x2bsdifr47huasnmbgqzfrec5ubupvtpid.onion/" target="_blank" rel="noopener noreferrer">DanielWin</a> <button onclick="copyToClipboard('http://danielas3rtn54uwmofdo3x2bsdifr47huasnmbgqzfrec5ubupvtpid.onion/')">کپی</button></li>
+      <li><a href="http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion/" target="_blank" rel="noopener noreferrer">Hidden Answers</a> <button onclick="copyToClipboard('http://answerszuvs3gg2l64e6hmnryudl5zgrmwm3vh65hzszdghblddvfiqd.onion/')">کپی</button></li>
+      <li><a href="https://kcmykvkkt3umiyx4xouu3sjo6odz3rolqphy2i2bbdan33g3zrjfjgqd.onion/" target="_blank" rel="noopener noreferrer">aboutMastodon</a> <button onclick="copyToClipboard('https://kcmykvkkt3umiyx4xouu3sjo6odz3rolqphy2i2bbdan33g3zrjfjgqd.onion/')">کپی</button></li>
+      <li><a href="http://dhosting4xxoydyaivckq7tsmtgi4wfs3flpeyitekkmqwu4v4r46syd.onion/" target="_blank" rel="noopener noreferrer">Daniels Hosting</a> <button onclick="copyToClipboard('http://dhosting4xxoydyaivckq7tsmtgi4wfs3flpeyitekkmqwu4v4r46syd.onion/')">کپی</button></li>
+      <li><a href="http://cathug2kyi4ilneggumrenayhuhsvrgn6qv2y47bgeet42iivkpynqad.onion/" target="_blank" rel="noopener noreferrer">cathugger’s site</a> <button onclick="copyToClipboard('http://cathug2kyi4ilneggumrenayhuhsvrgn6qv2y47bgeet42iivkpynqad.onion/')">کپی</button></li>
+      <li><a href="http://zgeajoabenj2nac6k5cei5qy62iu5yun5gm2vjnxy65r3p3amzykwxqd.onion/" target="_blank" rel="noopener noreferrer">Darkweb Blog</a> <button onclick="copyToClipboard('http://zgeajoabenj2nac6k5cei5qy62iu5yun5gm2vjnxy65r3p3amzykwxqd.onion/')">کپی</button></li>
+      <li><a href="http://ozmh2zkwx5cjuzopui64csb5ertcooi5vya6c2gm4e3vcvf2c2qvjiyd.onion/" target="_blank" rel="noopener noreferrer">riseup searx</a> <button onclick="copyToClipboard('http://ozmh2zkwx5cjuzopui64csb5ertcooi5vya6c2gm4e3vcvf2c2qvjiyd.onion/')">کپی</button></li>
+      <li><a href="http://45tbhx5prlejzjgn36nqaxqb6qnm73pbohuvqkpxz2zowh57bxqawkid.onion/" target="_blank" rel="noopener noreferrer">Parckwart’s Website</a> <button onclick="copyToClipboard('http://45tbhx5prlejzjgn36nqaxqb6qnm73pbohuvqkpxz2zowh57bxqawkid.onion/')">کپی</button></li>
+      <li><a href="http://sidignlwz2odjhgcfhbueinmr23v5bubq2x43dskcebh5sbd2qrxtkid.onion/" target="_blank" rel="noopener noreferrer">securejabber</a> <button onclick="copyToClipboard('http://sidignlwz2odjhgcfhbueinmr23v5bubq2x43dskcebh5sbd2qrxtkid.onion/')">کپی</button></li>
+      <li><a href="http://sik5nlgfc5qylnnsr57qrbm64zbdx6t4lreyhpon3ychmxmiem7tioad.onion/" target="_blank" rel="noopener noreferrer">Qubes OS</a> <button onclick="copyToClipboard('http://sik5nlgfc5qylnnsr57qrbm64zbdx6t4lreyhpon3ychmxmiem7tioad.onion/')">کپی</button></li>
+      <li><a href="http://dds6qkxpwdeubwucdiaord2xgbbeyds25rbsgr73tbfpqpt4a6vjwsyd.onion/" target="_blank" rel="noopener noreferrer">Whonix</a> <button onclick="copyToClipboard('http://dds6qkxpwdeubwucdiaord2xgbbeyds25rbsgr73tbfpqpt4a6vjwsyd.onion/')">کپی</button></li>
+      <li><a href="http://lldan5gahapx5k7iafb3s4ikijc4ni7gx5iywdflkba5y2ezyg6sjgyd.onion/" target="_blank" rel="noopener noreferrer">OnionShare</a> <button onclick="copyToClipboard('http://lldan5gahapx5k7iafb3s4ikijc4ni7gx5iywdflkba5y2ezyg6sjgyd.onion/')">کپی</button></li>
+      <li><a href="http://nanochanqzaytwlydykbg5nxkgyjxk3zsrctxuoxdmbx5jbh2ydyprid.onion/" target="_blank" rel="noopener noreferrer">NanoChan</a> <button onclick="copyToClipboard('http://nanochanqzaytwlydykbg5nxkgyjxk3zsrctxuoxdmbx5jbh2ydyprid.onion/')">کپی</button></li>
+      <li><a href="http://picochanwvqfa2xsrfzlul4x4aqtog2eljll5qnj5iagpbhx2vmfqnid.onion/" target="_blank" rel="noopener noreferrer">PicoChan</a> <button onclick="copyToClipboard('http://picochanwvqfa2xsrfzlul4x4aqtog2eljll5qnj5iagpbhx2vmfqnid.onion/')">کپی</button></li>
+      <li><a href="http://enxx3byspwsdo446jujc52ucy2pf5urdbhqw3kbsfhlfjwmbpj5smdad.onion/" target="_blank" rel="noopener noreferrer">EndChan</a> <button onclick="copyToClipboard('http://enxx3byspwsdo446jujc52ucy2pf5urdbhqw3kbsfhlfjwmbpj5smdad.onion/')">کپی</button></li>
+      <li><a href="http://dngtk6iydmpokbyyk3irqznceft3hze6q6rasrqlz46v7pq4klxnl4yd.onion/" target="_blank" rel="noopener noreferrer">256Chan</a> <button onclick="copyToClipboard('http://dngtk6iydmpokbyyk3irqznceft3hze6q6rasrqlz46v7pq4klxnl4yd.onion/')">کپی</button></li>
+      <li><a href="http://cct5wy6mzgmft24xzw6zeaf55aaqmo6324gjlsghdhbiw5gdaaf4pkad.onion/" target="_blank" rel="noopener noreferrer">Snopyta</a> <button onclick="copyToClipboard('http://cct5wy6mzgmft24xzw6zeaf55aaqmo6324gjlsghdhbiw5gdaaf4pkad.onion/')">کپی</button></li>
+      <li><a href="http://wnrgozz3bmm33em4aln3lrbewf3ikxj7fwglqgla2tpdji4znjp7viqd.onion/" target="_blank" rel="noopener noreferrer">VYempire.xyz</a> <button onclick="copyToClipboard('http://wnrgozz3bmm33em4aln3lrbewf3ikxj7fwglqgla2tpdji4znjp7viqd.onion/')">کپی</button></li>
+      <li><a href="http://7sk2kov2xwx6cbc32phynrifegg6pklmzs7luwcggtzrnlsolxxuyfyd.onion/" target="_blank" rel="noopener noreferrer">SystemLI.org</a> <button onclick="copyToClipboard('http://7sk2kov2xwx6cbc32phynrifegg6pklmzs7luwcggtzrnlsolxxuyfyd.onion/')">کپی</button></li>
+      <li><a href="http://stormwayszuh4juycoy4kwoww5gvcu2c4tdtpkup667pdwe4qenzwayd.onion/" target="_blank" rel="noopener noreferrer">CryptoStorm VPN</a> <button onclick="copyToClipboard('http://stormwayszuh4juycoy4kwoww5gvcu2c4tdtpkup667pdwe4qenzwayd.onion/')">کپی</button></li>
+      <li><a href="http://xdkriz6cn2avvcr2vks5lvvtmfojz2ohjzj4fhyuka55mvljeso2ztqd.onion/" target="_blank" rel="noopener noreferrer">Cock.li</a> <button onclick="copyToClipboard('http://xdkriz6cn2avvcr2vks5lvvtmfojz2ohjzj4fhyuka55mvljeso2ztqd.onion/')">کپی</button></li>
+      <li><a href="http://eludemailxhnqzfmxehy3bk5guyhlxbunfyhkcksv4gvx6d3wcf6smad.onion/" target="_blank" rel="noopener noreferrer">Elude.in</a> <button onclick="copyToClipboard('http://eludemailxhnqzfmxehy3bk5guyhlxbunfyhkcksv4gvx6d3wcf6smad.onion/')">کپی</button></li>
+      <li><a href="http://lainwir3s4y5r7mqm3kurzpljyf77vty2hrrfkps6wm4nnnqzest4lqd.onion/" target="_blank" rel="noopener noreferrer">qord11.net</a> <button onclick="copyToClipboard('http://lainwir3s4y5r7mqm3kurzpljyf77vty2hrrfkps6wm4nnnqzest4lqd.onion/')">کپی</button></li>
+      <li><a href="http://cgjzkysxa4ru5rhrtr6rafckhexbisbtxwg2fg743cjumioysmirhdad.onion/" target="_blank" rel="noopener noreferrer">Course Enigma</a> <button onclick="copyToClipboard('http://cgjzkysxa4ru5rhrtr6rafckhexbisbtxwg2fg743cjumioysmirhdad.onion/')">کپی</button></li>
+      <li><a href="http://killnod2s77o3axkktdu52aqmmy4acisz2gicbhjm4xbvxa2zfftteyd.onion/" target="_blank" rel="noopener noreferrer">Kill9</a> <button onclick="copyToClipboard('http://killnod2s77o3axkktdu52aqmmy4acisz2gicbhjm4xbvxa2zfftteyd.onion/')">کپی</button></li>
+      <li><a href="http://digdeep4orxw6psc33yxa2dgmuycj74zi6334xhxjlgppw6odvkzkiad.onion/" target="_blank" rel="noopener noreferrer">DigDeeper</a> <button onclick="copyToClipboard('http://digdeep4orxw6psc33yxa2dgmuycj74zi6334xhxjlgppw6odvkzkiad.onion/')">کپی</button></li>
+      <li><a href="http://spywaredrcdg5krvjnuk3vbdwiqcv3zwbrcg6qh27kiwecm4qyfphid.onion/" target="_blank" rel="noopener noreferrer">Spyware Watchdog</a> <button onclick="copyToClipboard('http://spywaredrcdg5krvjnuk3vbdwiqcv3zwbrcg6qh27kiwecm4qyfphid.onion/')">کپی</button></li>
+      <li><a href="http://meynethaffeecapsvfphrcnfrx44w2nskgls2juwitibvqctk2plvhqd.onion/" target="_blank" rel="noopener noreferrer">May Vane Day Studios</a> <button onclick="copyToClipboard('http://meynethaffeecapsvfphrcnfrx44w2nskgls2juwitibvqctk2plvhqd.onion/')">کپی</button></li>
+      <li><a href="http://zsxjtsgzborzdllyp64c6pwnjz5eic76bsksbxzqefzogwcydnkjy3yd.onion/" target="_blank" rel="noopener noreferrer">Shadow Wiki</a> <button onclick="copyToClipboard('http://zsxjtsgzborzdllyp64c6pwnjz5eic76bsksbxzqefzogwcydnkjy3yd.onion/')">کپی</button></li>
+      <li><a href="http://g7ejphhubv5idbbu3hb3wawrs5adw7tkx7yjabnf65xtzztgg4hcsqqd.onion/" target="_blank" rel="noopener noreferrer">Defcon</a> <button onclick="copyToClipboard('http://g7ejphhubv5idbbu3hb3wawrs5adw7tkx7yjabnf65xtzztgg4hcsqqd.onion/')">کپی</button></li>
+      <li><a href="http://p53lf57qovyuvwsc6xnrppyply3vtqm7l6pcobkmyqsiofyeznfu5uqd.onion/" target="_blank" rel="noopener noreferrer">Propublica</a> <button onclick="copyToClipboard('http://p53lf57qovyuvwsc6xnrppyply3vtqm7l6pcobkmyqsiofyeznfu5uqd.onion/')">کپی</button></li>
+      <li><a href="http://darkzzx4avcsuofgfez5zq75cqc4mprjvfqywo45dfcaxrwqg6qrlfid.onion/" target="_blank" rel="noopener noreferrer">Darknetlive</a> <button onclick="copyToClipboard('http://darkzzx4avcsuofgfez5zq75cqc4mprjvfqywo45dfcaxrwqg6qrlfid.onion/')">کپی</button></li>
+      <li><a href="http://keybase5wmilwokqirssclfnsqrjdsi7jdir5wy7y7iu3tanwmtp6oid.onion/" target="_blank" rel="noopener noreferrer">KeyBase.IO</a> <button onclick="copyToClipboard('http://keybase5wmilwokqirssclfnsqrjdsi7jdir5wy7y7iu3tanwmtp6oid.onion/')">کپی</button></li>
+      <li><a href="http://ciadotgov4sjwlzihbbgxnqg3xiyrg7so2r2o3lt5wz5ypk4sxyjstad.onion/" target="_blank" rel="noopener noreferrer">CIA.GOV</a> <button onclick="copyToClipboard('http://ciadotgov4sjwlzihbbgxnqg3xiyrg7so2r2o3lt5wz5ypk4sxyjstad.onion/')">کپی</button></li>
+      <li><a href="http://archivebyd3rzt3ehjpm4c3bjkyxv3hjleiytnvxcn7x32psn2kxcuid.onion/" target="_blank" rel="noopener noreferrer">Internet Archive</a> <button onclick="copyToClipboard('http://archivebyd3rzt3ehjpm4c3bjkyxv3hjleiytnvxcn7x32psn2kxcuid.onion/')">کپی</button></li>
+      <li><a href="http://bible4u2lvhacg4b3to2e2veqpwmrc2c3tjf2wuuqiz332vlwmr4xbad.onion/" target="_blank" rel="noopener noreferrer">Bible4u</a> <button onclick="copyToClipboard('http://bible4u2lvhacg4b3to2e2veqpwmrc2c3tjf2wuuqiz332vlwmr4xbad.onion/')">کپی</button></li>
+      <li><a href="http://kx5thpx2olielkihfyo4jgjqfb7zx7wxr3sd4xzt26ochei4m6f7tayd.onion/" target="_blank" rel="noopener noreferrer">Imperial Library</a> <button onclick="copyToClipboard('http://kx5thpx2olielkihfyo4jgjqfb7zx7wxr3sd4xzt26ochei4m6f7tayd.onion/')">کپی</button></li>
+      <li><a href="http://nv3x2jozywh63fkohn5mwp2d73vasusjixn3im3ueof52fmbjsigw6ad.onion/" target="_blank" rel="noopener noreferrer">Comic Books</a> <button onclick="copyToClipboard('http://nv3x2jozywh63fkohn5mwp2d73vasusjixn3im3ueof52fmbjsigw6ad.onion/')">کپی</button></li>
+    </ul>
+
+  </div>
+
+<script>
+function copyToClipboard(text){
+  navigator.clipboard.writeText(text).then(function(){
+    alert('کپی شد:\n' + text);
+  }, function(err){
+    alert('خطا در کپی: ' + err);
+  });
+}
+
+function copyAll(){
+  const anchors = document.querySelectorAll('#links a');
+  const all = Array.from(anchors).map(a => a.href).join('\n');
+  copyToClipboard(all);
+}
+</script>
+
 </body>
 </html>
